@@ -72,7 +72,7 @@ let objectPassed = [
 let convertedObj = parser(objectPassed, objectPassed[0])
 console.log(convertedObj)
 console.log("-------------------------------------")
-let parsed = `"${JSON.stringify(convertedObj)}"`
+let parsed = `'${JSON.stringify(convertedObj)}'`
 
 console.log(parsed)
 
