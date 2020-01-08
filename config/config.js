@@ -2,14 +2,14 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "jubilantWaffle",
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "jubilantWaffle",
+    "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
