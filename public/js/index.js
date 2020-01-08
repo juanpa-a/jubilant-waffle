@@ -1,99 +1,92 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $ref = {
+  button: $("#submit"),
+  parentId: $("#parentId"),
+  leaf: $("#leaf"),
+  title: $("#title"),
+  body: $("#body"),
+  question: $("#question")
+};
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  add: function(data) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/add",
+      data: JSON.stringify(data)
     });
   },
-  getExamples: function() {
+  getById: function(id) {
     return $.ajax({
-      url: "api/examples",
+      url: "api/id/" + id,
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  getByParentId: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: "api/children/" + id,
+      type: "GET"
     });
   }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
 };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
+function addEntry(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var newEntry = {
+    parentId: $ref.parentId.val().trim(),
+    leaf: $ref.leaf.val(),
+    title: $ref.title.val().trim(),
+    body: $ref.body.val().trim(),
+    question: $ref.question.val().trim(),
+    hidden: false
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!newEntry.parentId) {
+    alert("Missing parent id");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  if (!newEntry.leaf) {
+    newEntry.leaf = true;
+  }
+
+  if (!newEntry.title) {
+    alert("Missing title");
+    return;
+  }
+
+  if (!newEntry.body) {
+    alert("Missing body");
+    return;
+  }
+
+  if (!newEntry.question) {
+    alert("Missing question");
+    return;
+  }
+
+  API.add(newEntry).then(function() {
+    location.reload();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
+  restartValues();
+}
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+//Resets input values
+function restartValues() {
+  $ref.parentId.val("");
+  $ref.leaf.val("");
+  $ref.title.val("");
+  $ref.body.val("");
+  $ref.question.val("");
+}
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// Add event listeners to the submit button
+$ref.button.on("click", addEntry);
