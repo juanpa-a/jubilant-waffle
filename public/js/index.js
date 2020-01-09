@@ -34,8 +34,7 @@ var API = {
   }
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// function to add entry to db, linked to button click or submit
 function addEntry(event) {
   event.preventDefault();
 
@@ -48,8 +47,27 @@ function addEntry(event) {
     hidden: false
   };
 
-  if (!newEntry.parentId) {
-    alert("Missing parent id");
+  if (!newEntry.title) {
+    errorModal("Title is required.");
+    return;
+  } else if (newEntry.title.length < 2 || newEntry.title.length > 40) {
+    errorModal("Title has to be between 2 and 40 characters.");
+    return;
+  }
+
+  if (!newEntry.body) {
+    errorModal("Text is required.");
+    return;
+  } else if (newEntry.body.length < 10 || newEntry.body.length > 600) {
+    errorModal("Text has to be between 10 and 600 characters.");
+    return;
+  }
+
+  if (!newEntry.question) {
+    errorModal("Question (or ending) is required.");
+    return;
+  } else if (newEntry.question.length < 4 || newEntry.question.length > 20) {
+    errorModal("Question (or ending) has to be between 4 and 20 characters");
     return;
   }
 
@@ -57,26 +75,15 @@ function addEntry(event) {
     newEntry.leaf = true;
   }
 
-  if (!newEntry.title) {
-    alert("Missing title");
+  if (!newEntry.parentId) {
+    errorModal("Parent id is required.");
     return;
   }
 
-  if (!newEntry.body) {
-    alert("Missing body");
-    return;
-  }
-
-  if (!newEntry.question) {
-    alert("Missing question");
-    return;
-  }
-
+  restartValues();
   API.add(newEntry).then(function() {
     location.reload();
   });
-
-  restartValues();
 }
 
 //Resets input values
@@ -86,6 +93,12 @@ function restartValues() {
   $ref.title.val("");
   $ref.body.val("");
   $ref.question.val("");
+}
+
+//Show error modal with given information
+function errorModal(info) {
+  $("#errorModalBody").text(info);
+  $("#errorModal").modal("show");
 }
 
 // Add event listeners to the submit button
