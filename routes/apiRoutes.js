@@ -43,6 +43,8 @@ module.exports = function(app) {
       !req.body.question
     ) {
       return res.send("Missing info");
+    } else if (isNaN(parseInt(req.body.parentId))) {
+      return res.send("Parent ID is invalid.");
     } else if (req.body.title.length < 4 || req.body.title.length > 40) {
       return res.send("Title required between 4 and 40 characters");
     } else if (req.body.body.length < 10) {
