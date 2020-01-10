@@ -34,7 +34,7 @@ const parse = id => {
     root.body,
     root.question,
     root.isLeaf,
-    root.children = children;
+    root.children = children
   );
 };
 
@@ -42,7 +42,8 @@ const parse = id => {
 const drawTree = () => {
   tree.push(parse(id));
   // refresh tree
+
   // mandar a p5
 };
 
-// E. Funcion de P5
+// E. Funcion de p5
