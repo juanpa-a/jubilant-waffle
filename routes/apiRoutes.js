@@ -43,11 +43,16 @@ module.exports = function(app) {
 
   // Hide an entry by id
   app.put("/api/hide/:id", function(req, res) {
-    db.Waffle.update({ hidden: true }, { where: { id: req.params.id } }).then(
-      function(dbWaffles) {
-        res.json(dbWaffles);
+    db.Waffle.update(
+      {
+        hidden: true
+      },
+      {
+        where: { id: req.params.id }
       }
-    );
+    ).then(function(dbWaffles) {
+      res.json(dbWaffles);
+    });
   });
 
   // Show an entry by id

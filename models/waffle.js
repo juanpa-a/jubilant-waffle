@@ -27,9 +27,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
-          min: {
-            args: 10
-          }
+          min: 10
         }
       },
       question: {

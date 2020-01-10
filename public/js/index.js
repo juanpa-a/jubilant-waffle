@@ -39,7 +39,7 @@ function addEntry(event) {
   event.preventDefault();
 
   var newEntry = {
-    parentId: $ref.parentId.val().trim(),
+    parentId: -1, //agregar aqui link a parent id
     leaf: $ref.leaf.val(),
     title: $ref.title.val().trim(),
     body: $ref.body.val().trim(),
@@ -58,16 +58,16 @@ function addEntry(event) {
   if (!newEntry.body) {
     errorModal("Text is required.");
     return;
-  } else if (newEntry.body.length < 10 || newEntry.body.length > 600) {
-    errorModal("Text has to be between 10 and 600 characters.");
+  } else if (newEntry.body.length < 10) {
+    errorModal("Text has to be at least 10 characters.");
     return;
   }
 
   if (!newEntry.question) {
     errorModal("Question (or ending) is required.");
     return;
-  } else if (newEntry.question.length < 4 || newEntry.question.length > 20) {
-    errorModal("Question (or ending) has to be between 4 and 20 characters");
+  } else if (newEntry.question.length < 2 || newEntry.question.length > 40) {
+    errorModal("Question (or ending) has to be between 2 and 40 characters");
     return;
   }
 
@@ -75,13 +75,8 @@ function addEntry(event) {
     newEntry.leaf = true;
   }
 
-  if (!newEntry.parentId) {
-    errorModal("Parent id is required.");
-    return;
-  }
-
-  restartValues();
   API.add(newEntry).then(function() {
+    restartValues();
     location.reload();
   });
 }
