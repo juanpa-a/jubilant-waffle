@@ -8,22 +8,25 @@ module.exports = function(sequelize, DataTypes) {
         autoIncrement: true
       },
       parentId: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       leaf: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
       },
       title: {
         type: DataTypes.STRING,
+        allowNull: false,
         validate: {
-          allowNull: false,
           len: [2, 40]
         }
       },
       body: {
         type: DataTypes.TEXT,
+        allowNull: false,
         validate: {
-          allowNull: false,
           min: {
             args: 10
           }
@@ -31,13 +34,14 @@ module.exports = function(sequelize, DataTypes) {
       },
       question: {
         type: DataTypes.STRING,
+        allowNull: false,
         validate: {
-          allowNull: false,
           len: [2, 40]
         }
       },
       hidden: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
         defaultValue: false
       }
     },
