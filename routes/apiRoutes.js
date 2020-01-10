@@ -58,10 +58,10 @@ module.exports = function(app) {
       if (!req.body.leaf) {
         req.body.leaf = true;
       }
-      db.sequelize.query(`SELECT PARENT.ID, COUNT(SON.PARENTID) AS CHILDREN, PARENT.LEAF
-                        FROM WAFFLES PARENT
-                        LEFT JOIN WAFFLES SON ON SON.PARENTID = PARENT.ID
-                        AND SON.HIDDEN = 0
+      db.sequelize.query(`SELECT PARENT.ID, COUNT(CHILD.PARENTID) AS CHILDREN, PARENT.LEAF
+                        FROM Waffles PARENT
+                        LEFT JOIN Waffles CHILD ON CHILD.PARENTID = PARENT.ID
+                        AND CHILD.HIDDEN = 0
                         WHERE PARENT.ID = ${req.body.parentId}`)
         .then(function (response){
           console.log(response[0][0]);
