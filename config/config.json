@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "171717",
+    "password": null,
     "database": "jubilantWaffle",
     "host": "localhost",
     "dialect": "mysql"
