@@ -56,12 +56,28 @@ module.exports = function(app) {
       if (!req.body.leaf) {
         req.body.leaf = true;
       }
-      db.Waffle.create(req.body)
-        .then(function(dbWaffle) {
-          res.json(dbWaffle);
-        })
-        .catch(function(err) {
-          console.log(err);
+      db.sequelize.query(`SELECT PARENT.ID, COUNT(SON.PARENTID) AS CHILDREN, PARENT.LEAF
+                        FROM WAFFLES PARENT
+                        LEFT JOIN WAFFLES SON ON SON.PARENTID = PARENT.ID
+                        AND SON.HIDDEN = 0
+                        WHERE PARENT.ID = ${req.body.parentId}`)
+        .then(function (response){
+          console.log(response[0][0]);
+          if(!response[0][0].ID) {
+            return res.send("Parent ID does not exist.");
+          } else if(response[0][0].LEAF === 1) {
+            return res.send("Parent ID is a leaf and therefore can't be a parent.");
+          } else if(response[0][0].CHILDREN >= 6) {
+            return res.send("Parent already has 6 visible children.");
+          } else {
+            db.Waffle.create(req.body)
+            .then(function(dbWaffle) {
+              res.json(dbWaffle);
+            })
+            .catch(function(err) {
+              return res.error(err);
+            });
+          }
         });
     }
   });
