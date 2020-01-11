@@ -162,7 +162,7 @@ function init(treeData) {
       getElem.append(svg.node());
 }
 document.addEventListener("DOMContentLoaded", function() {
-    init(treeData)
+    //init(treeData)
 
   
 });
