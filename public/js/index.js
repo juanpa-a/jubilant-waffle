@@ -20,7 +20,8 @@ var API = {
       },
       type: "POST",
       url: "/api/add",
-      data: JSON.stringify(data)
+      data: JSON.stringify(data),
+      async: false
     });
   },
   getById: function(id) {
