@@ -1,12 +1,5 @@
 body{
   background-color: black;
-  font-family: Pixelated;
-  color: white;
-}
-
-@font-face {
-  font-family: Pixelated;
-  src: url(../assets/Pixeled.ttf);
 }
 
 @font-face {
@@ -30,6 +23,7 @@ body{
 
 .choice {
   padding: 5%;
+  cursor: pointer;
 }
 
 body {
