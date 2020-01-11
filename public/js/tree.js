@@ -1,5 +1,14 @@
 let id = 1;
 
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
 let node = {
   id: 1,
   parentId: 0,
@@ -70,18 +79,23 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-const moveForward = (id) => {
+function moveForward(id) {
   node = API.getById(id);
   children = API.getByParentId(id);
 }
 
-$('.choice').on('click', function() {
-
-  id = $(this).attr('value');
-  moveForward(id);
+function render() {
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
   drawOptions();
+}
+
+$('.choice').on('click', async function() {
+
+  id = $(this).attr('value');
+  console.log(id);
+  moveForward(id);
+  render();
 });
 
