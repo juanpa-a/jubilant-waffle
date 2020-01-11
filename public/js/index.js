@@ -15,10 +15,9 @@ $(".choice").on("click", function() {
 var API = {
   add: function(data) {
     return $.ajax({
-      type: "POST",
       url: "../api/add",
-      data: JSON.stringify(data),
-      async: false
+      type: "POST",
+      data: JSON.stringify(data)
     });
   },
   getById: function(id) {
