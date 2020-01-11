@@ -65,6 +65,7 @@ let children = [
 const drawEvent = () => {
   $(".description").text('');
   $(".description").text(node.body);
+  $(".description").attr('value', id);
   $(".question").text('');
   $(".question").text(node.question);
 };
