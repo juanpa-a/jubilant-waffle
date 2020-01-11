@@ -1,10 +1,10 @@
 // Get references to page elements
 var $ref = {
   button: $("#new-branch"),
-  leaf: $("#leaf"),
-  title: $("#title"),
-  body: $("#body"),
-  question: $("#question")
+  //leaf: $("#leaf"),
+  title: $("#node-title"),
+  body: $("#node-description"),
+  question: $("#node-question")
 };
 
 $(".choice").on("click", function() {
