@@ -50,6 +50,7 @@ function addEntry(event) {
   };
   console.log(id)
   console.log(newEntry)
+  console.log(parentID)
 
   if (!newEntry.title) {
     errorModal("Title is required.");
