@@ -84,12 +84,12 @@ drawOptions()
 //  children = API.getByParentId(id);
 //}
 
-$('.choice').on('click', async function() {
+$('.choice').on('click', function() {
 
   id = $(this).attr('value');
   console.log(id);
-  node = API.getById(2);
-  children = API.getByParentId(2);
+  node = API.getById(id);
+  children = API.getByParentId(id);
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
