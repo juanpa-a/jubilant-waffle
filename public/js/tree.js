@@ -79,7 +79,7 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-function moveForward async(id) {
+function moveForward(id) {
   node = API.getById(id);
   children = API.getByParentId(id);
 }
@@ -95,6 +95,7 @@ $('.choice').on('click', async function() {
 
   id = $(this).attr('value');
   console.log(id);
-  moveForward(id).then(render());
+  moveForward(id);
+  render();
 });
 
