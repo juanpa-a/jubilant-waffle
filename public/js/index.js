@@ -79,10 +79,11 @@ function addEntry(event) {
 
   console.log(newEntry)
 
-  API.add(newEntry).then(function() {
+  API.add(newEntry).then(function(err) {
     restartValues();
     //location.reload();
     console.log("New Entry Added")
+    console.log(err);
   });
 }
 
