@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CREATE TABLE IF NOT EXISTS `WAFFLES` (
   `id` INTEGER NOT NULL auto_increment,
   `title` VARCHAR(255),
@@ -9,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `WAFFLES` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `Nodes` (
+CREATE TABLE IF NOT EXISTS `Waffle` (
   `id` INTEGER NOT NULL auto_increment,
   `title` VARCHAR(255),
   `description` TEXT,
@@ -33,7 +32,3 @@ CREATE TABLE IF NOT EXISTS `Nodes` (
 -- CREATE DATABASE exampledb;
 -- DROP DATABASE IF EXISTS testdb;
 -- CREATE DATABASE testdb;
-=======
-DROP DATABASE IF EXISTS jubilantWaffle;
-CREATE DATABASE jubilantWaffle;
->>>>>>> 07384dfb0fa1354b6299a37b359808cd806ac6e0

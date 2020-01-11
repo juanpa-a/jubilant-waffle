@@ -25,19 +25,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/add",
+      url: "/api/add",
       data: JSON.stringify(data)
     });
   },
   getById: function(id) {
     return $.ajax({
-      url: "api/id/" + id,
+      url: "../api/id/" + id,
       type: "GET"
     });
   },
   getByParentId: function(id) {
     return $.ajax({
-      url: "api/children/" + id,
+      url: "../api/children/" + id,
       type: "GET"
     });
   }
