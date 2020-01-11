@@ -101,5 +101,5 @@ function errorModal(info) {
 }
 
 // Add event listeners to the submit button
-document.on("click",$ref.button,addEntry);
+$(document).on("click",$ref.button,addEntry);
 
