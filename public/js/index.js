@@ -1,20 +1,21 @@
-<<<<<<< HEAD
-var $exampleText = $("#example-text");
+var exampleText = $("#example-text");
 // Get references to page elements
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-=======
-// Get references to page elements
-var $ref = {
-  button: $("#submit"),
-  parentId: $("#parentId"),
-  leaf: $("#leaf"),
-  title: $("#title"),
-  body: $("#body"),
-  question: $("#question")
-};
->>>>>>> cc327d04a1486e9c8ceb9d7c800a07c9a58ce0b9
+var exampleDescription = $("#example-description");
+var submitBtn = $("#submit");
+var exampleList = $("#example-list");
+
+
+console.log(exampleText);
+console.log(exampleDescription);
+console.log(submitBtn);
+
+
+console.log(exampleList);
+$(".choice").on("click", function() {
+  console.log($(this).text());
+});
+
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -110,4 +111,5 @@ function errorModal(info) {
 }
 
 // Add event listeners to the submit button
-$ref.button.on("click", addEntry);
+// $ref.button.on("click", addEntry);
+
