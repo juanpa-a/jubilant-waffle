@@ -48,9 +48,6 @@ function addEntry(event) {
     question: $ref.question.val().trim(),
     hidden: false
   };
-  console.log(id)
-  console.log(newEntry)
-  console.log(newEntry.parentId)
 
   if (!newEntry.title) {
     errorModal("Title is required.");
@@ -79,6 +76,10 @@ function addEntry(event) {
   if (!newEntry.leaf) {
     newEntry.leaf = true;
   }
+
+  console.log(id)
+  console.log(newEntry)
+  console.log(newEntry.parentId)
 
   API.add(newEntry).then(function() {
     restartValues();
