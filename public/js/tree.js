@@ -22,9 +22,6 @@ let node = {
   updatedAt: "2020-01-10T20:55:04.000Z"
 };
 
-if (node.leaf) {
-   $("#addNew").text("")
-}
 
 let children = [
   {
@@ -101,6 +98,9 @@ $(document).on("click",".choice",function() {
   console.log(id);
   moveForward(id);
   render();
+   if (node.leaf) {
+   $("#addNew").text("")
+}
 
 });
 
@@ -130,7 +130,7 @@ treeData = {
 
 
 $(document).ready(function() {
-    init(treeData)
+    //init(treeData)
 })
 
 
