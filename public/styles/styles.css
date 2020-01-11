@@ -3,7 +3,7 @@ body{
 }
 
 @font-face {
-  font-family: "Pixeled";
+  font-family: 'Press Start 2P', cursive;
   src: url("./Pixeled.ttf") format("truetype");
 }
 
