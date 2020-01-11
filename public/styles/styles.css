@@ -130,3 +130,25 @@ body::after {
   pointer-events: none;
   animation: flicker 0.1s infinite;
 }
+
+button {
+  background-color: #84b082;
+  color: #1c1c1c;
+  border: none;
+  padding-bottom: 5px
+}
+
+button:hover {
+  background-color: #5b8d59;
+  color: #84b082;
+  cursor: grab
+}
+
+.choice:hover {
+  color: #5b8d59;
+}
+
+img {
+  width: 200px;
+  height: 112px;
+}
