@@ -1,6 +1,6 @@
 let id = 1;
 
-const node = {
+let node = {
   id: 1,
   parentId: 0,
   leaf: false,
@@ -13,7 +13,7 @@ const node = {
   updatedAt: "2020-01-10T20:55:04.000Z"
 };
 
-const children = [
+let children = [
   {
     id: 2,
     parentId: 1,
@@ -53,28 +53,31 @@ const children = [
 ];
 
 const drawEvent = () => {
+  $(".description").text('');
   $(".description").text(node.body);
+  $(".question").text('');
   $(".question").text(node.question);
 };
 
 const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
-    $(".choices").append(`<span  value=${15} class="choice col-lg-4">${elem.title}</span>`);
+    console.log(elem.id);
+    $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
   });
 };
 
 drawEvent()
 drawOptions()
 
-const moveForward = (id) => {
+const moveForward = (id) => {  
   node = API.getById(id);
   children = API.getByParentId(id);
-
-  drawEvent();
-  drawOptions();
 }
 
 $('.choice').on('click', function() {
-  moveForward($(this).val());
-})
+  id = $(this).attr('value');
+  moveForward(id);
+  drawEvent();
+  drawOptions();
+});
