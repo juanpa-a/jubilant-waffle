@@ -87,6 +87,7 @@ const moveForward = async function(id) {
 $('.choice').on('click', async function() {
 
   id = $(this).attr('value');
+  console.log(id);
   await moveForward(id);
   wait(1000);
   node = node.responseJSON;
