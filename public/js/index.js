@@ -19,7 +19,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/api/add",
+      url: "../api/add",
       data: JSON.stringify(data),
       async: false
     });
