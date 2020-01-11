@@ -107,7 +107,8 @@ $(document).on("click",".choice",function() {
 
 });
 
-$("#new-branch").on("click", function() {
+$("#new-branch").on("click", function(event) {
+   event.preventDefault()
   let title = $("#node-title").val().trim()
   let description = $("#node-description").val().trim()
   let question = $("#node-question").val().trim()
