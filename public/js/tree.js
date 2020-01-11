@@ -91,7 +91,7 @@ function render() {
   drawOptions();
 }
 
-$('.choice').on('click', async function() {
+$(document).on("click",".choice",function() {
 
   id = $(this).attr('value');
   console.log(id);
