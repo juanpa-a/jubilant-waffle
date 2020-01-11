@@ -1,6 +1,6 @@
 let id = 1;
 
-const node = {
+let node = {
   id: 1,
   parentId: 0,
   leaf: false,
@@ -13,7 +13,7 @@ const node = {
   updatedAt: "2020-01-10T20:55:04.000Z"
 };
 
-const children = [
+let children = [
   {
     id: 2,
     parentId: 1,
