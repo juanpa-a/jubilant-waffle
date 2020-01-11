@@ -17,7 +17,7 @@ var API = {
     return $.ajax({
       url: "../api/add",
       type: "POST",
-      data: JSON.stringify(data)
+      data: data
     });
   },
   getById: function(id) {
