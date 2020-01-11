@@ -98,6 +98,7 @@ $(document).on("click",".choice",function() {
   console.log(id);
   moveForward(id);
   render();
+   console.log(node.leaf)
    if (node.leaf) {
    $("#addNew").text("")
 }
