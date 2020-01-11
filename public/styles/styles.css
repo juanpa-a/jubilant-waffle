@@ -114,6 +114,18 @@ body::before {
   100% {
     opacity: 0.24387;
   }
+  105% {
+    opacity: 0.70419;
+  }
+  110% {
+    opacity: 0.7003;
+  }
+  115% {
+    opacity: 0.36108;
+  }
+  120% {
+    opacity: 0.24387;
+  }
 }
 
 body::after {
