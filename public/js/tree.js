@@ -70,7 +70,7 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-const moveForward = async (id) => {
+const moveForward = async function(id) {
   node = API.getById(id);
   children = API.getByParentId(id);
 }
