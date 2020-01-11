@@ -171,3 +171,7 @@ img {
 .addNew, .choices {
   text-align: center; 
  }
+
+.addNew {
+  margin-bottom: 35px
+}
