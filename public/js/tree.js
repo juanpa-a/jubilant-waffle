@@ -102,6 +102,134 @@ $(document).on("click",".choice",function() {
    if (node.leaf) {
    $(".addNew").text("")
 }
+   
+     if (id === 2) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care"},
+               {name: "jubilant"},
+               {name: "wheat"},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }
+   
+   if (id === 3) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care",
+                children: [{name:"Dead"}]},
+               {name: "jubilant"},
+               {name: "wheat"},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }
+   
+   if (id === 3) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care"},
+               {name: "jubilant",
+                children: [{name: "Complete"}]},
+               {name: "wheat"},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }
+   
+   if (id === 5) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care"},
+               {name: "jubilant"},
+               {name: "wheat",
+                children: [
+                   {name: "jelly"},
+                   {name: "nutella"]},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }
+           
+    if (id === 6) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care"},
+               {name: "jubilant"},
+               {name: "wheat",
+                children: [
+                   {name: "jelly",
+                     children: [
+                        {name: "happy"}]},
+                   {name: "nutella"]},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }   
+               
+               if (id === 7) {
+     treeData = {
+        name: "Room",
+        id: 1,
+        children: [
+          { name: "Waffle", 
+            id: 2,
+            children: [
+               {name: "don't care"},
+               {name: "jubilant"},
+               {name: "wheat",
+                children: [
+                   {name: "jelly"},
+                   {name: "nutella",
+                    children: [
+                       {name: "myself"},
+                       {name: "loved ones"},
+                       {name: "mortal enemy"},
+                    ]]},
+            ]},
+          { name: "Box", id: 13},
+          { name: "Sword", id: 15},
+         ]
+      } 
+   }
+$("#spacetree").text("")
+init(treeData)  
 
 });
 
@@ -131,7 +259,7 @@ treeData = {
 
 
 $(document).ready(function() {
-    //init(treeData)
+    init(treeData)
 })
 
 
