@@ -22,6 +22,10 @@ let node = {
   updatedAt: "2020-01-10T20:55:04.000Z"
 };
 
+if (node.leaf) {
+   $("#addNew").text("")
+}
+
 let children = [
   {
     id: 2,
