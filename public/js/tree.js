@@ -503,3 +503,15 @@ newArr.push(node)
 //send to D3
 
 // display
+
+
+function start() {
+  id = 1
+  await updateNode(id);
+  node = node.responseJSON;
+  children = children.responseJSON;
+  drawEvent();
+  drawOptions();
+}
+
+start();
