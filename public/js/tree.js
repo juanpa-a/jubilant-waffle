@@ -79,17 +79,17 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-const moveForward = async function(id) {
-  node = API.getById(id);
-  children = API.getByParentId(id);
-}
+//const moveForward = async function(id) {
+//  node = API.getById(id);
+//  children = API.getByParentId(id);
+//}
 
 $('.choice').on('click', async function() {
 
   id = $(this).attr('value');
   console.log(id);
-  await moveForward(id);
-  wait(1000);
+  node = API.getById(id);
+  children = API.getByParentId(id);
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
