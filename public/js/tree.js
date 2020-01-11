@@ -505,13 +505,3 @@ newArr.push(node)
 // display
 
 
-function start() {
-  id = 1
-  await updateNode(id);
-  node = node.responseJSON;
-  children = children.responseJSON;
-  drawEvent();
-  drawOptions();
-}
-
-start();
