@@ -104,3 +104,7 @@ function errorModal(info) {
 // Add event listeners to the submit button
 $(document).on("click","#new-branch",addEntry);
 
+$(document).on("click","#bttnOk", function(){
+  $("#infoModal").modal("show");
+});
+
