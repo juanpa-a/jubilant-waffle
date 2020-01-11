@@ -88,7 +88,7 @@ function addEntry(event) {
 
 //Resets input values
 function restartValues() {
-  $ref.leaf.val("");
+  //$ref.leaf.val("");
   $ref.title.val("");
   $ref.body.val("");
   $ref.question.val("");
