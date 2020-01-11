@@ -76,8 +76,10 @@ const moveForward = (id) => {
 }
 
 $('.choice').on('click', function() {
+
   id = $(this).attr('value');
   moveForward(id);
   drawEvent();
   drawOptions();
 });
+
