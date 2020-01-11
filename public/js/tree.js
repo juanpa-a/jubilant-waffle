@@ -1,5 +1,14 @@
 let id = 1;
 
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
 let node = {
   id: 1,
   parentId: 0,
@@ -79,6 +88,7 @@ $('.choice').on('click', async function() {
 
   id = $(this).attr('value');
   await moveForward(id);
+  wait(1000);
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
