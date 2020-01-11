@@ -17,7 +17,8 @@ var API = {
     return $.ajax({
       type: "POST",
       url: "../api/add",
-      data: JSON.stringify(data)
+      data: JSON.stringify(data),
+      async: false
     });
   },
   getById: function(id) {
@@ -77,9 +78,7 @@ function addEntry(event) {
     newEntry.leaf = true;
   }
 
-  console.log(id)
   console.log(newEntry)
-  console.log(newEntry.parentId)
 
   API.add(newEntry).then(function() {
     restartValues();
