@@ -71,8 +71,8 @@ drawEvent()
 drawOptions()
 
 const moveForward = (id) => {  
-  node = API.getById(id);
-  children = API.getByParentId(id);
+  node = API.getById(id).responseJSON;
+  children = API.getByParentId(id).responseJSON;
 }
 
 $('.choice').on('click', function() {
