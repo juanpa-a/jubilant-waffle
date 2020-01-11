@@ -36,6 +36,7 @@ module.exports = function(app) {
 
   // Add an entry
   app.post("/api/add", function(req, res) {
+    console.log(req.body);
     if (
       !req.body.parentId ||
       !req.body.title ||
