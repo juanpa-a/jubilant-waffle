@@ -1,6 +1,7 @@
 // Get references to page elements
 var $ref = {
   button: $("#new-branch"),
+  parentId:$(".description").attr("value"),
   //leaf: $("#leaf"),
   title: $("#node-title"),
   body: $("#node-description"),
@@ -41,7 +42,7 @@ function addEntry(event) {
   event.preventDefault();
 
   var newEntry = {
-    parentId: $(".description").attr("value"),
+    parentId: $ref.parentId.val(),
     //leaf: $ref.leaf.val(),
     title: $ref.title.val().trim(),
     body: $ref.body.val().trim(),
