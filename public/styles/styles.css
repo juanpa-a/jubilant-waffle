@@ -15,10 +15,12 @@ body{
 
 .description {
   padding: 4%;
+  text-align: left
 }
 
 .question {
   padding: 3%;
+  margin-left: 20px
 }
 
 .choice {
