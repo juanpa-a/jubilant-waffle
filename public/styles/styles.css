@@ -159,6 +159,7 @@ button:hover {
 .choice:hover {
   color: #5b8d59;
   border-color: #5b8d59;
+  border-width: 5px;
 }
 
 img {
