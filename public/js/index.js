@@ -1,6 +1,6 @@
 // Get references to page elements
 var $ref = {
-  button: $("#submit"),
+  button: $("#new-branch"),
   leaf: $("#leaf"),
   title: $("#title"),
   body: $("#body"),
@@ -101,5 +101,5 @@ function errorModal(info) {
 }
 
 // Add event listeners to the submit button
-// $ref.button.on("click", addEntry);
+$ref.button.on("click", addEntry);
 
