@@ -75,7 +75,7 @@ const moveForward = async function(id) {
   children = API.getByParentId(id);
 }
 
-$('.choice').on('click', function() {
+$('.choice').on('click', async function() {
 
   id = $(this).attr('value');
   await moveForward(id);
