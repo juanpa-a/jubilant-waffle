@@ -70,9 +70,11 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-const moveForward = (id) => {  
-  node = API.getById(id).responseJSON;
-  children = API.getByParentId(id).responseJSON;
+const moveForward = (id) => {
+  node = API.getById(id);
+  node = node.responseJSON
+  children = API.getByParentId(id);
+  children = children.responseJSON;
 }
 
 $('.choice').on('click', function() {
