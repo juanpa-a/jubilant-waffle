@@ -1,18 +1,15 @@
-var exampleText = $("#example-text");
 // Get references to page elements
-var exampleDescription = $("#example-description");
-var submitBtn = $("#submit");
-var exampleList = $("#example-list");
+var $ref = {
+  button: $("#submit"),
+  leaf: $("#leaf"),
+  title: $("#title"),
+  body: $("#body"),
+  question: $("#question")
+};
 
-
-
-
-console.log(exampleList);
 $(".choice").on("click", function() {
   console.log($(this).text());
 });
-
-
 
 // The API object contains methods for each kind of request we'll make
 var API = {
