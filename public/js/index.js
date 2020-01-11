@@ -5,9 +5,6 @@ var submitBtn = $("#submit");
 var exampleList = $("#example-list");
 
 
-console.log(exampleText);
-console.log(exampleDescription);
-console.log(submitBtn);
 
 
 console.log(exampleList);

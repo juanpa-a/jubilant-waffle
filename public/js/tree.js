@@ -53,28 +53,33 @@ let children = [
 ];
 
 const drawEvent = () => {
+  $(".description").text('');
   $(".description").text(node.body);
+  $(".question").text('');
   $(".question").text(node.question);
 };
 
 const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
-    $(".choices").append(`<span  value=${15} class="choice col-lg-4">${elem.title}</span>`);
+    console.log(elem.id);
+    $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
   });
 };
 
 drawEvent()
 drawOptions()
 
-const moveForward = (id) => {
+const moveForward = (id) => {  
   node = API.getById(id);
   children = API.getByParentId(id);
-
-  drawEvent();
-  drawOptions();
 }
 
 $('.choice').on('click', function() {
-  moveForward($(this).val());
-})
+
+  id = $(this).attr('value');
+  moveForward(id);
+  drawEvent();
+  drawOptions();
+});
+
