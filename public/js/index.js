@@ -45,7 +45,7 @@ function addEntry(event) {
 
   var newEntry = {
     parentId: -1, //agregar aqui link a parent id
-    leaf: $ref.leaf.val(),
+    //leaf: $ref.leaf.val(),
     title: $ref.title.val().trim(),
     body: $ref.body.val().trim(),
     question: $ref.question.val().trim(),
