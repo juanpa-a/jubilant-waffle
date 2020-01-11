@@ -79,20 +79,22 @@ const drawOptions = () => {
 drawEvent()
 drawOptions()
 
-//const moveForward = async function(id) {
-//  node = API.getById(id);
-//  children = API.getByParentId(id);
-//}
-
-$('.choice').on('click', function() {
-
-  id = $(this).attr('value');
-  console.log(id);
+const moveForward = async function(id) {
   node = API.getById(id);
   children = API.getByParentId(id);
+}
+
+function render() {
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
   drawOptions();
+}
+
+$('.choice').on('click', async function() {
+
+  id = $(this).attr('value');
+  console.log(id);
+  moveForward(id).then(render());
 });
 
