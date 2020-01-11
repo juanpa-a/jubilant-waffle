@@ -3,29 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <title>Jubilant Waffle</title>
+    <link rel="shortcut icon" type="image" href="./assets/favicon.ico">
     <link
       href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
   </head>
 
   <body>
     <div class="container">
       <div class="node">
-        <div class="row">
+
+          <div class="col-3"><img src="./assets/logo.png" alt=""></div>
           <h4 class="description">You wake up.</h4>
-        </div>
+ 
         <div class="row">
           <h5 class="question">What do you do?</h5>
         </div>
         <div class="choices row">
           <span class="choice col-lg-4">Cry!</span>
         </div>
+        <div class="addNew">
+          <button class="btn" type="button" id="add-info" data-toggle="modal" data-target="#infoModal">Add Option</button>
+        </div>
       </div>
+      <div id=spacetree></div>
 
       <div
         class="modal fade"
@@ -62,6 +68,42 @@
           </div>
         </div>
       </div>
+      
+      <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add your own option</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="node-title" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="node-title">
+                </div>
+                <div class="form-group">
+                  <label for="node-description" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="node-description"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="node-question" class="col-form-label">Question:</label>
+                  <textarea class="form-control" id="node-question"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="new-branch">Send story branch</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
 
     <script src="js/index.js" type="text/javascript"></script>
