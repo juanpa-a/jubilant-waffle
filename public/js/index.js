@@ -81,7 +81,7 @@ function addEntry(event) {
 
   API.add(newEntry).then(function(err) {
     restartValues();
-    //location.reload();
+    location.reload();
     console.log("New Entry Added")
     console.log(err);
   });
