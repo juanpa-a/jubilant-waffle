@@ -100,7 +100,7 @@ $(document).on("click",".choice",function() {
   render();
    console.log(node.leaf)
    if (node.leaf) {
-   $("#addNew").text("")
+   $(".addNew").text("")
 }
 
 });
