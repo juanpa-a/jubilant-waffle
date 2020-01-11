@@ -10,7 +10,6 @@ body{
 * {
   font-family: 'Press Start 2P', cursive;
   color: #84b082;
-  text-align: center !important;
 }
 
 .description {
@@ -168,3 +167,7 @@ img {
   width: 200px;
   height: 112px;
 }
+
+.addNew, .choices {
+  text-align: center; 
+ }
