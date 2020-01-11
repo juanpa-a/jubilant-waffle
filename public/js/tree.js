@@ -88,8 +88,8 @@ $('.choice').on('click', async function() {
 
   id = $(this).attr('value');
   console.log(id);
-  node = API.getById(id);
-  children = API.getByParentId(id);
+  node = API.getById(2);
+  children = API.getByParentId(2);
   node = node.responseJSON;
   children = children.responseJSON;
   drawEvent();
