@@ -29,13 +29,15 @@ var API = {
   getById: function(id) {
     return $.ajax({
       url: "../api/id/" + id,
-      type: "GET"
+      type: "GET",
+      async: false
     });
   },
   getByParentId: function(id) {
     return $.ajax({
       url: "../api/children/" + id,
-      type: "GET"
+      type: "GET",
+      async: false
     });
   }
 };
