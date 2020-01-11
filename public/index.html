@@ -3,32 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Jubilant Waffle</title>
+    <link rel="shortcut icon" type="image" href="./assets/favicon.ico">
     <link
       href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v5.js"></script>
-
   </head>
 
   <body>
     <div class="container">
       <div class="node">
-        <div class="row">
+
+          <div class="col-3"><img src="./assets/logo.png" alt=""></div>
           <h4 class="description">You wake up.</h4>
-        </div>
+ 
         <div class="row">
           <h5 class="question">What do you do?</h5>
         </div>
         <div class="choices row">
           <span class="choice col-lg-4">Cry!</span>
         </div>
-      </div>
-      <div class="addNew">
+        <div class="addNew">
           <button class="btn" type="button" id="add-info" data-toggle="modal" data-target="#infoModal">Add Option</button>
         </div>
       </div>
@@ -69,9 +68,8 @@
           </div>
         </div>
       </div>
-    </div>
-  
-  div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      
+      <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -103,6 +101,10 @@
           </div>
         </div>
       </div>
+
+
+
+    </div>
 
     <script src="js/index.js" type="text/javascript"></script>
     <script defer src="./js/tree.js"></script>
