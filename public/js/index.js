@@ -41,7 +41,7 @@ function addEntry(event) {
   event.preventDefault();
 
   var newEntry = {
-    parentId: $(".description").attr("value"),
+    parentId: parseInt($(".description").attr("value")),
     //leaf: $ref.leaf.val(),
     title: $ref.title.val().trim(),
     body: $ref.body.val().trim(),
