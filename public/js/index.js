@@ -41,7 +41,7 @@ function addEntry(event) {
   event.preventDefault();
 
   var newEntry = {
-    parentId: id, //agregar aqui link a parent id
+    parentId: $(".description").attr("value"),
     //leaf: $ref.leaf.val(),
     title: $ref.title.val().trim(),
     body: $ref.body.val().trim(),
