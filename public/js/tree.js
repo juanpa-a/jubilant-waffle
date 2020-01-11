@@ -74,13 +74,9 @@ const drawEvent = () => {
 const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
-     if (elem.hidden) {
-      console.log("Hidden element");
-    };
-     else {
+
     console.log(elem.id);
     $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
-     };
   });
 };
 
