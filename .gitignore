@@ -1,5 +1,11 @@
+config
 .DS_Store
 node_modules
 npm-debug.log
 .env
 package-lock.json
+config/config.json
+models
+routes
+test
+server.js

@@ -1,12 +1,21 @@
+var exampleText = $("#example-text");
 // Get references to page elements
-var $ref = {
-  button: $("#submit"),
-  parentId: $("#parentId"),
-  leaf: $("#leaf"),
-  title: $("#title"),
-  body: $("#body"),
-  question: $("#question")
-};
+var exampleDescription = $("#example-description");
+var submitBtn = $("#submit");
+var exampleList = $("#example-list");
+
+
+console.log(exampleText);
+console.log(exampleDescription);
+console.log(submitBtn);
+
+
+console.log(exampleList);
+$(".choice").on("click", function() {
+  console.log($(this).text());
+});
+
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -16,19 +25,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/add",
+      url: "/api/add",
       data: JSON.stringify(data)
     });
   },
   getById: function(id) {
     return $.ajax({
-      url: "api/id/" + id,
+      url: "../api/id/" + id,
       type: "GET"
     });
   },
   getByParentId: function(id) {
     return $.ajax({
-      url: "api/children/" + id,
+      url: "../api/children/" + id,
       type: "GET"
     });
   }
@@ -96,4 +105,5 @@ function errorModal(info) {
 }
 
 // Add event listeners to the submit button
-$ref.button.on("click", addEntry);
+// $ref.button.on("click", addEntry);
+
