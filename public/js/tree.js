@@ -22,7 +22,6 @@ let node = {
   updatedAt: "2020-01-10T20:55:04.000Z"
 };
 
-
 let children = [
   {
     id: 2,
@@ -62,6 +61,8 @@ let children = [
   }
 ];
 
+
+
 const drawEvent = () => {
   $(".description").text('');
   $(".description").text(node.body);
@@ -73,6 +74,7 @@ const drawEvent = () => {
 const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
+
     console.log(elem.id);
     $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
   });
@@ -502,3 +504,5 @@ newArr.push(node)
 //send to D3
 
 // display
+
+
