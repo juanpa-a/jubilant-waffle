@@ -27,7 +27,8 @@ module.exports = function(app) {
   app.get("/api/children/:id", function(req, res) {
     db.Waffle.findAll({
       where: {
-        parentId: req.params.id
+        parentId: req.params.id,
+        hidden: false
       }
     }).then(function(dbWaffles) {
       res.json(dbWaffles);
