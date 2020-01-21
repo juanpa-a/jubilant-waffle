@@ -77,7 +77,12 @@ const drawOptions = () => {
     console.log("Elem: "+ JSON.stringify(elem))
     console.log("Hidden: " + elem.hidden)
     console.log(elem.id);
-    $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
+    if (!elem.hidden) {
+       $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
+    };
+    else {
+    console.log(elem.title + " is hidden")
+    }
   });
 };
 
