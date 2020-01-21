@@ -96,7 +96,9 @@ function moveForward(id) {
 
 function render() {
   node = node.responseJSON;
+  console.log("Node: " + node)
   children = children.responseJSON;
+  console.log("Children: " + children)
   drawEvent();
   drawOptions();
 }
