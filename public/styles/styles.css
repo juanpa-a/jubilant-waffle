@@ -175,3 +175,7 @@ img {
 .addNew {
   margin-bottom: 35px
 }
+
+#logo:hover {
+  cursor: pointer;
+}
