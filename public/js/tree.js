@@ -75,7 +75,7 @@ const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
     console.log("Elem: "+ elem)
-    console.log("Hidden ": + elem.hidden)
+    console.log("Hidden: " + elem.hidden)
     console.log(elem.id);
     $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
   });
