@@ -108,3 +108,6 @@ $(document).on("click","#bttnOk", function(){
   $("#infoModal").modal("show");
 });
 
+$("#logo").on("click", function() {
+  location.reload();
+});
