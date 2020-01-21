@@ -79,10 +79,10 @@ const drawOptions = () => {
     console.log(elem.id);
     if (!elem.hidden) {
        $(".choices").append(`<span  value=${elem.id} class="choice col-lg-4">${elem.title}</span>`);
-    };
+    }
     else {
     console.log(elem.title + " is hidden")
-    }
+    };
   });
 };
 
