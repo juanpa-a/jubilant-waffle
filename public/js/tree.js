@@ -74,7 +74,7 @@ const drawEvent = () => {
 const drawOptions = () => {
   $('.choices').empty();
   children.forEach(elem => {
-    console.log("Elem: "+ JSON.stringify(elem))
+    //console.log("Elem: "+ JSON.stringify(elem))
     console.log("Hidden: " + elem.hidden)
     console.log(elem.id);
     if (!elem.hidden) {
@@ -96,9 +96,9 @@ function moveForward(id) {
 
 function render() {
   node = node.responseJSON;
-  console.log("Node: " + node)
+  console.log("Node: " + JSON.stringify(node))
   children = children.responseJSON;
-  console.log("Children: " + children)
+  console.log("Children: " + JSON.stringify(children))
   drawEvent();
   drawOptions();
 }
