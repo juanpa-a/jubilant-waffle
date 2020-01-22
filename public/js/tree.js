@@ -340,7 +340,7 @@ function newTree(data) {
         const transition = svg
         .transition()
         .duration(duration)
-        .attr("viewBox", [-margin.left, left.x - margin.top, width, height])
+        .attr("viewBox", [-100, -50, 500, 70])
         .tween(
             "resize",
             window.ResizeObserver ? null : () => () => svg.dispatch("toggle")
