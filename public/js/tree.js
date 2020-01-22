@@ -189,18 +189,18 @@ function parser(obj, root) {
 
 let finalObj = parser(trimArr, root);
 console.log(JSON.stringify(finalObj));
+return finalObj
 }
 
 treeArr.push(node);
 nodePush()
-fullParser()
 //Saved in finalObj
 
 //Actual Tree
 let width = window.innerWidth;
 let height = window.innerHeight;
 
-let treeData = finalObj
+let treeData = fullParser()
 newTree(treeData)
 
 
