@@ -104,7 +104,11 @@ function render() {
 }
 
 $(document).on("click",".choice",function() {
-
+  nodePush()
+  fullParser()
+  //saved in finalObj
+  resetTree()
+   
   id = $(this).attr('value');
   console.log(id);
   moveForward(id);
