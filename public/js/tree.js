@@ -197,7 +197,7 @@ return finalObj
 }
 
 treeArr.push(node);
-nodePush()
+//nodePush()
 //Saved in finalObj
 
 //Actual Tree
