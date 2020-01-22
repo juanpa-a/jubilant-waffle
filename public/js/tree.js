@@ -237,11 +237,11 @@ document.addEventListener("DOMContentLoaded", function() {
     init()
 });
 
- dx = 10;
- dy = 150;
- tree = d3.tree().nodeSize([dx, dy]);
- margin = { top: 50, right: 120, bottom: 10, left: 40 };
- diagonal = d3
+ let dx = 10;
+ let dy = 150;
+ let tree = d3.tree().nodeSize([dx, dy]);
+ let margin = { top: 50, right: 120, bottom: 10, left: 40 };
+ let diagonal = d3
    .linkHorizontal()
    .x(d => d.y)
    .y(d => d.x);
