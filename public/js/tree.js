@@ -254,7 +254,7 @@ function newTree(data) {
     const currentNode = root.descendants().reverse();
     //console.log(currentNode)
     // Nada... Usado para que no se rompa
-    root.x0 = dy / 2;
+    root.x0 = 150 / 2;
     // Nada... Usado para que no se rompa
     root.y0 = 0;
 
