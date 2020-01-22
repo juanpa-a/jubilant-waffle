@@ -219,7 +219,7 @@ newTree(treeData)
 
 
 function resetTree() {
-    treeData = finalObj
+    treeData = fullParser()
     document.getElementById("spacetree").innerHTML = ""
     init()
 }
