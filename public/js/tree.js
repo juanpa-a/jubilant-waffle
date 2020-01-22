@@ -206,7 +206,7 @@ let height = window.innerHeight;
 
 
  let dx = 10;
- let dy = 100;
+ let dy = 80;
  let tree = d3.tree().nodeSize([dx, dy]);
  let margin = { top: 50, right: 120, bottom: 10, left: 40 };
  let diagonal = d3
@@ -227,7 +227,7 @@ function init() {
       // Gives the height of the spacetree
       dx = 10;
       // Node separation distance
-      dy = 150;
+      dy = 80;
       // Can be typed in nodeSize below
       tree = d3.tree().nodeSize([dx, dy]);
 
@@ -259,7 +259,7 @@ function newTree(data) {
     const currentNode = root.descendants().reverse();
     //console.log(currentNode)
     // Nada... Usado para que no se rompa
-    root.x0 = 150 / 2;
+    root.x0 = dy / 2;
     // Nada... Usado para que no se rompa
     root.y0 = 0;
 
