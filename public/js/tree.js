@@ -206,7 +206,7 @@ let height = window.innerHeight;
 
 
  let dx = 10;
- let dy = 150;
+ let dy = 100;
  let tree = d3.tree().nodeSize([dx, dy]);
  let margin = { top: 50, right: 120, bottom: 10, left: 40 };
  let diagonal = d3
