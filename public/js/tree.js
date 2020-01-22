@@ -276,7 +276,7 @@ function newTree(data) {
         //SVG HTML document fragment
         .create("svg")
         //With attribute of viewbox ("points seen" in SVG drawing area) [min x, min y, width, height]
-        .attr("viewBox", [-margin.left, -margin.top, width, dx])
+        .attr("viewBox", [100, -50, 500, 70])
         //Changes font
         .style("font", "10px cute-font cursive")
         //Cannot highlight text or select
